@@ -1,0 +1,8 @@
+Data,Produto,Categoria,Vendedor,Quantidade,Valor_Unitario,Valor_Total
+2026-10-01,Notebook Pro,Eletrônicos,Ana Silva,2,4500,9000
+2026-10-02,Mouse Sem Fio,Acessórios,Carlos Lima,5,120,600
+2026-10-02,Teclado Mecânico,Acessórios,Ana Silva,3,350,1050
+2026-10-03,Monitor 27,Eletrônicos,Bruno Souza,1,1800,1800
+2026-10-04,Cadeira Ergonômica,Móveis,Carlos Lima,2,1200,2400
+2026-10-05,Notebook Pro,Eletrônicos,Bruno Souza,1,4500,4500
+2026-10-05,Headset Gamer,Acessórios,Ana Silva,4,250,1000
