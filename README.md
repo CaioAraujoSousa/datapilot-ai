@@ -64,8 +64,6 @@ datapilot-ai/
 └── .gitignore
 ```
 
-> O diretório `venv/` é utilizado localmente para o ambiente virtual Python e não deve ser versionado no GitHub.
-
 ## ⚙️ Como executar localmente
 
 ### 1. Pré-requisitos
