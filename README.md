@@ -2,11 +2,11 @@
 
 ### Assistente inteligente para análise de dados com Inteligência Artificial
 
-O **DataPilot AI** é um projeto em desenvolvimento que busca transformar planilhas de dados em informações úteis para a tomada de decisões.
+O **DataPilot AI** é um projeto em desenvolvimento que busca transformar planilhas e arquivos de dados em informações úteis para a tomada de decisões.
 
-A proposta é permitir que usuários enviem arquivos CSV ou Excel e façam perguntas em linguagem natural sobre seus dados. Por meio de ferramentas de análise e agentes de Inteligência Artificial, o sistema deverá interpretar solicitações, executar análises e apresentar resultados de maneira clara e visual.
+A proposta é permitir que usuários enviem arquivos CSV ou Excel e façam perguntas em linguagem natural sobre seus dados. Por meio de ferramentas de análise, processamento de dados e agentes de Inteligência Artificial, o sistema deverá interpretar solicitações, executar análises e apresentar resultados de maneira clara e visual.
 
-> 🚧 **Status:** Em desenvolvimento — MVP inicial.
+> 🚧 **Status:** MVP em desenvolvimento — módulo inicial de análise de dados implementado.
 
 ---
 
@@ -14,28 +14,40 @@ A proposta é permitir que usuários enviem arquivos CSV ou Excel e façam pergu
 
 Facilitar a análise de dados de vendas e operações, permitindo que usuários obtenham informações estratégicas sem precisar construir manualmente fórmulas complexas, consultas ou tabelas dinâmicas.
 
-O projeto também tem como objetivo explorar a integração entre agentes de IA, processamento de dados e automação de tarefas.
+O projeto também tem como objetivo explorar a integração entre agentes de IA, processamento de dados e automação de tarefas, tornando a análise de informações mais acessível e intuitiva.
 
 ## 🚀 Funcionalidades
 
 ### Implementado
 - [x] Estrutura inicial do projeto.
 - [x] Configuração do ambiente Python.
-- [x] Interface inicial utilizando Streamlit.
-- [x] Preparação de uma base de dados de exemplo.
+- [x] Interface interativa utilizando Streamlit.
+- [x] Carregamento de arquivos CSV.
+- [x] Validação das colunas necessárias.
+- [x] Pré-visualização dos dados carregados.
+- [x] Processamento e análise de dados utilizando Pandas.
+- [x] Cálculo do faturamento total.
+- [x] Identificação do produto mais vendido por quantidade.
+- [x] Identificação do vendedor com maior faturamento.
+- [x] Cálculo da quantidade total de unidades vendidas.
+- [x] Análise de faturamento por categoria.
+- [x] Cálculo da participação percentual de cada categoria no faturamento.
+- [x] Visualização de dados com gráficos interativos utilizando Plotly.
 
 ### Em desenvolvimento
-- [ ] Carregamento e validação de arquivos CSV e Excel.
-- [ ] Processamento e análise de dados utilizando Pandas.
-- [ ] Cálculo automatizado de indicadores, faturamento, médias e rankings.
-- [ ] Integração com API de modelos de Inteligência Artificial.
-- [ ] Agente inteligente com Tool Calling / Function Calling.
+- [ ] Aprimoramento da validação e do tratamento de dados.
+- [ ] Implementação de novos indicadores e ferramentas de análise.
+- [ ] Melhorias na interface e experiência do usuário.
+- [ ] Organização e expansão dos módulos de processamento.
 
 ### Planejado
-- [ ] Visualização interativa de dados com Plotly.
-- [ ] Consulta aos dados utilizando linguagem natural.
+- [ ] Suporte ao carregamento e processamento de arquivos Excel (.xlsx).
+- [ ] Integração com API de modelos de Inteligência Artificial.
+- [ ] Desenvolvimento de um agente inteligente com Tool Calling / Function Calling.
+- [ ] Consultas aos dados utilizando linguagem natural.
 - [ ] Geração de relatórios executivos.
 - [ ] Exportação dos resultados das análises.
+- [ ] Expansão do suporte a diferentes formatos de arquivos e fontes de dados.
 
 ## 🛠️ Tecnologias
 
@@ -44,9 +56,9 @@ O projeto também tem como objetivo explorar a integração entre agentes de IA,
 | Python | Linguagem principal |
 | Streamlit | Interface da aplicação |
 | Pandas | Processamento e análise de dados |
-| Plotly | Visualização de dados (planejado) |
-| APIs de IA | Integração com modelos de linguagem (planejado) |
+| Plotly | Criação de gráficos interativos |
 | Git e GitHub | Versionamento e documentação |
+| Gemini API | Integração com modelos de IA (planejada) |
 
 ## 📂 Estrutura do projeto
 
@@ -57,6 +69,9 @@ datapilot-ai/
 ├── .claude/
 ├── data/
 │   └── exemplo_vendas.csv
+│
+├── src/
+│   └── data_processor.py
 │
 ├── app.py
 ├── requirements.txt
@@ -124,15 +139,16 @@ A aplicação será disponibilizada localmente pelo Streamlit, normalmente em:
 
 ## 🗺️ Próximas etapas
 
-O desenvolvimento será realizado de maneira incremental, priorizando a construção de um MVP funcional.
+O desenvolvimento será realizado de maneira incremental, priorizando a construção de um MVP funcional e a evolução gradual de suas capacidades.
 
 As próximas etapas incluem:
 
-1. Implementar o carregamento e processamento de planilhas.
-2. Desenvolver ferramentas de análise de dados com Python.
-3. Integrar um agente de IA capaz de utilizar essas ferramentas.
-4. Construir um dashboard interativo.
-5. Implementar a geração de relatórios.
+1. Aprimorar as ferramentas de processamento e análise de dados.
+2. Expandir o suporte para arquivos Excel e outros formatos de planilhas.
+3. Desenvolver novas funcionalidades e indicadores de análise.
+4. Integrar um modelo de Inteligência Artificial ao sistema.
+5. Desenvolver um agente capaz de interpretar solicitações e utilizar ferramentas de análise por meio de Tool Calling.
+6. Implementar consultas em linguagem natural e geração de relatórios.
 
 ## 👨‍💻 Autor
 
