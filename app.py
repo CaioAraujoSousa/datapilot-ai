@@ -8,7 +8,8 @@ from src.data_processor import (
     produto_mais_vendido,
     vendedor_destaque,
     calcular_quantidade_total,
-    faturamento_por_categoria
+    faturamento_por_categoria,
+    percentual_por_categoria
 )
 
 st.set_page_config(
@@ -54,6 +55,13 @@ if arquivo is not None:
 
             resultado_categoria = faturamento_por_categoria(df)
 
+            percentuais_categoria = percentual_por_categoria(df)
+
+            st.write("Participação percentual por categoria:")
+            st.dataframe(
+                percentuais_categoria.to_frame().style.format("{:.2f}%"),
+                use_container_width=True
+            )   
             st.write("Faturamento por categoria:")
             st.write(resultado_categoria)
 
