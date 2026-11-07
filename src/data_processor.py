@@ -1,0 +1,29 @@
+
+import pandas as pd
+
+
+def calcular_faturamento(df):
+    """Calcula o faturamento total das vendas."""
+    return df["Valor_Total"].sum()
+
+
+def produto_mais_vendido(df):
+    """Identifica o produto com maior quantidade vendida."""
+    vendas = df.groupby("Produto")["Quantidade"].sum()
+    return vendas.idxmax(), vendas.max()
+
+
+def vendedor_destaque(df):
+    """Identifica o vendedor com maior faturamento."""
+    vendas = df.groupby("Vendedor")["Valor_Total"].sum()
+    return vendas.idxmax(), vendas.max()
+
+def calcular_quantidade_total(df):
+    """Calcula a quantidade total de unidades vendidas."""
+    return df["Quantidade"].sum()
+
+def faturamento_por_categoria(df):
+    """Calcula o faturamento total de cada categoria."""
+    faturamento = df.groupby("Categoria")["Valor_Total"].sum()
+
+    return faturamento
