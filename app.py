@@ -47,25 +47,58 @@ if arquivo is not None:
             st.subheader("Prévia dos dados")
             st.dataframe(df, use_container_width=True)
 
+            quantidade_total = calcular_quantidade_total(df)
+
+            st.write("Quantidade total vendida:", quantidade_total)
+
             faturamento = calcular_faturamento(df)
             produto, quantidade = produto_mais_vendido(df)
             vendedor, valor = vendedor_destaque(df)
-
-            quantidade_total = calcular_quantidade_total(df)
 
             resultado_categoria = faturamento_por_categoria(df)
 
             percentuais_categoria = percentual_por_categoria(df)
 
-            st.write("Participação percentual por categoria:")
-            st.dataframe(
-                percentuais_categoria.to_frame().style.format("{:.2f}%"),
-                use_container_width=True
-            )   
-            st.write("Faturamento por categoria:")
-            st.write(resultado_categoria)
+            dados_grafico_categoria = (
+                percentuais_categoria
+                .rename_axis("Categoria")
+                .reset_index()
+            )
 
-            st.write("Quantidade total vendida:", quantidade_total)
+            grafico_categoria = px.pie (
+                dados_grafico_categoria,
+                names="Categoria",
+                values="Percentual",
+                title="Participação do faturamento por categoria",
+                hole=0.5
+            )
+
+            grafico_categoria.update_traces(
+                textposition="inside",
+                texttemplate="%{label}<br>%{percent:.2%}"
+            )
+
+            st.plotly_chart(
+                grafico_categoria,
+                use_container_width=True
+            )
+
+            percentuais_categoria = percentual_por_categoria(df)
+
+            dados_grafico_categoria = (
+                percentuais_categoria
+                .rename_axis("Categoria")
+                .reset_index()
+            )  
+            
+            st.write("Faturamento por categoria:")
+
+            st.dataframe(
+                resultado_categoria.rename("Faturamento").to_frame().style.format(
+                    lambda valor: f"R$ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+                ),
+                use_container_width=True
+            )
 
             st.subheader("Indicadores de vendas")
 
