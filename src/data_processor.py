@@ -9,6 +9,10 @@ def produto_mais_vendido(df):
     vendas = df.groupby("Produto")["Quantidade"].sum()
     return vendas.idxmax(), vendas.max()
 
+def produto_maior_faturamento(df):
+    """Identifica o produto com maior faturamento"""
+    vendas = df.groupby("Produto")["Valor_Total"].sum()
+    return vendas.idxmax(), vendas.max()
 
 def vendedor_destaque(df):
     """Identifica o vendedor com maior faturamento."""
